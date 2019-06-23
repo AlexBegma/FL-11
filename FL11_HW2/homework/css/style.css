@@ -222,8 +222,7 @@
 
 	#contact_name:hover,
 	#contact_email:hover,
-	#contact_subject:hover,
-	#contact_message:hover {
+	#contact_subject:hover {
 		background-color: #76cdd7;
 		color: #fff;
 	}

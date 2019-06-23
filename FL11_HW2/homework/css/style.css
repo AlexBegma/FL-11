@@ -220,11 +220,13 @@
 		border-radius: 4px;
 	}
 
-	#contact_name:hover,
-	#contact_email:hover,
-	#contact_subject:hover {
+	.form-control:hover {
 		background-color: #76cdd7;
 		color: #fff;
+	}
+
+	#contact_message {
+		resize: none;
 	}
 
 	#contact_message,

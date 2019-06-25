@@ -1,0 +1,284 @@
+@mixin landing-logo() {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	width: 160px;
+
+	& p {
+		width: 100px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		font-size: 28px;
+		font-weight: 600;
+		line-height: 22px;
+		font-family: $fontSource;
+		color: $colorLogoText;
+
+		span {
+			font-size: 14px;
+			font-family: $fontSource;
+		}
+	}
+}
+
+$button-map: (
+	"button-width": 145px,
+	"button-height": 40px,
+	);
+
+body {
+	background-color: $colorBackground;
+}
+
+main {
+	margin: 0 auto;
+	width: 100%;
+}
+
+.header {
+	background-image: $backgroundImage;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 800px;
+	border: 1px solid transparent;
+	border-radius: 0 0 550px/250px 0;
+
+	&-wrap {
+		margin-left: 150px;
+		margin-top: 20px;
+	}
+}
+
+.landing-logo {
+	@include landing-logo();
+	color: $colorLogoText;
+}
+
+.header_heading {
+	position: relative;
+	font-family: $fontHind;
+	font-size: 80px;
+	font-weight: 700;
+	width: 650px;
+	margin-bottom: 15px;
+	z-index: 1;
+	color: $colorLogoText;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 330px;
+		height: 30px;
+		background: $colorAfter;
+		bottom: 30px;
+		left: 0;
+		z-index: -1;
+	}
+}
+
+.header_text {
+	font-family: $fontFresca;
+	font-size: 20px;
+	width: 700px;
+	margin-bottom: 45px;
+	color: $colorLogoText;
+}
+
+.header_button {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	border-radius: 3px;
+	border: 1px solid $colorBgButton;
+	background-color: $colorBgButton;
+	color: #fff;
+	width: map-get($button-map, "button-width");
+	height: map-get($button-map, "button-height");
+	font-family: $fontHind;
+	font-size: 22px;
+
+	&:hover {
+		border: 1px solid #fff;
+		background-color: #fff;
+		color: $colorBgButton;
+	}
+}
+
+.section {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.section_text {
+	position: relative;
+	text-align: center;
+	color: $colorLogoText;
+	font-family: $fontHind;
+	font-size: 32px;
+	font-weight: 600;
+	z-index: 1;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 145px;
+		height: 15px;
+		background: $colorAfter;
+		bottom: 10px;
+		left: 180px;
+		z-index: -1;
+	}
+}
+
+.section_card_wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
+}
+
+.section_card {
+	background-color: $colorBgCard;
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 280px;
+	height: 380px;
+	padding: 10px;
+	margin-right: 20px;
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	&_text {
+		text-align: center;
+	}
+}
+
+.section_card_heading {
+	position: relative;
+	font-size: 24px;
+	font-family: $fontHind;
+	font-weight: 600;
+	margin-bottom: 0;
+	z-index: 1;
+}
+
+.section_card_underline::after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 10px;
+	background: $colorAfter;
+	bottom: 10px;
+	left: 0;
+	z-index: -1;
+}
+
+.section_card_text {
+	color: #eae5e5;
+	font-family: $fontFresca;
+}
+
+.section_banner {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	width: 700px;
+	background: linear-gradient(to right, $colorLeftGradient, $colorRightGradient);
+	transform: translateY(60px);
+}
+
+.section_banner_text_wrap {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.section_banner_heading {
+	position: relative;
+	font-family: $fontSource;
+	font-size: 28px;
+	font-weight: 700;
+	color: $colorLogoText;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	z-index: 1;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		width: 57px;
+		height: 10px;
+		background: $colorAfter;
+		bottom: 5px;
+		left: 114px;
+		z-index: -1;
+	}
+}
+
+.section_banner_text {
+	font-family: $fontFresca;
+	font-size: 14px;
+	font-weight: 400;
+	margin-bottom: 45px;
+	margin-top: 0;
+	color: #fff;
+}
+
+.section_banner_button {
+	@extend .header_button
+}
+
+.footer {
+	background-color: $colorBgCard;
+
+	&_logo {
+		@include landing-logo();
+	}
+
+	&_text {
+		color: #fff;
+		margin-bottom: 25px;
+		width: 400px;
+		font-size: 18px;
+	}
+}
+
+.footer-cr {
+	color: #fff;
+	margin-bottom: 45px;
+	font-family: $fontFresca;
+	font-family: $fontFresca;
+}
+
+.footer-wrap {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-end;
+	height: 200px;
+}
+
+.footer_text {
+	font-family: $fontFresca;
+}

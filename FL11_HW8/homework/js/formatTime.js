@@ -5,6 +5,7 @@ function formatTime(num) {
     let timeResult = `${day} day(s) ${hour} hour(s) ${min} min(s) `;
      return timeResult;
 }
+
 formatTime(120);
 formatTime(59);
 formatTime(3601);
